@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Built-By: RJ
+Build-Jdk: 9
+Implementation-Title: Health and Fitness Tracker
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: org.reyn
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-URL: http://projects.spring.io/spring-boot/HealthFitnes
+ sTracker/
+Created-By: Maven Integration for Eclipse
+
