@@ -12,8 +12,12 @@ import org.springframework.stereotype.Repository;
 @Transactional
 public interface UserDAO extends CrudRepository<User, Integer> {
 	
+	User findByUsername(String username);
+	
 	public List<User> findAll();
 	
-	public User findById(Integer id);
+	User findById(Integer id);
+	
+	User findByEmail(String email);
 	
 }

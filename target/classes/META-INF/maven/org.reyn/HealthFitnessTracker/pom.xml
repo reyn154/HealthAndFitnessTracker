@@ -11,6 +11,9 @@
 	   	<artifactId>spring-boot-starter-parent</artifactId>
     	<version>1.5.8.RELEASE</version>
 	</parent>
+	<properties>
+	    <tomcat.version>7.0.82</tomcat.version>
+	</properties>
 	<dependencies>
 	    <dependency>
 	        <groupId>org.springframework.boot</groupId>
@@ -43,9 +46,39 @@
 		    <artifactId>eclipselink</artifactId>
 		    <version>2.7.0</version>
 		</dependency>
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+        </dependency>
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>jstl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+        
+        <dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-springsecurity4</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.sourceforge.nekohtml</groupId>
+			<artifactId>nekohtml</artifactId>
+			<version>1.9.21</version><!--$NO-MVN-MAN-VER$-->
+		</dependency>
 	</dependencies>
 	<build>
-
     <pluginManagement>
       <plugins>
         <plugin>
@@ -60,7 +93,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>3.0.2</version>
       </plugin>
     </plugins>
   </build>
