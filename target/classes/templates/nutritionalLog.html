@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Log Your Nutrition Intake</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<form autocomplete="off" action="#" th:action="@{/log}"
+						th:object="${info}" method="post" class="form-horizontal"
+						role="form">
+						<h2>Nutritional Log Form</h2>
+						<div class="form-group">
+							<div class="col-sm-9">
+							<label th:errors="*{calories}"
+									class="validation-message"></label>
+							<input type="text" th:field="*{calories}" placeholder="Calories"
+									class="form-control" /> 
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-9">
+							<label	th:errors="*{fats}"
+									class="validation-message"></label>
+								<input type="text" th:field="*{fats}"
+									placeholder="Fats" class="form-control" /> 
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-9">
+								<input type="text" th:field="*{cholesterol}" placeholder="Cholesterol"
+									class="form-control" /> <label
+									th:errors="*{cholesterol}"
+									class="validation-message"></label>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-9">
+								<input type="text" th:field="*{sodium}"
+									placeholder="Sodium" class="form-control" /> <label
+									th:errors="*{sodium}"
+									class="validation-message"></label>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-9">
+								<input type="text" th:field="*{carbohydrates}"
+									placeholder="Carbohydrates" class="form-control" /> <label
+									th:errors="*{carbohydrates}"
+									class="validation-message"></label>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-9">
+								<input type="text" th:field="*{proteins}"
+									placeholder="Proteins" class="form-control" /> <label
+									th:errors="*{proteins}"
+									class="validation-message"></label>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-9">
+								<button type="submit" class="btn btn-primary btn-block">Log Your Nutritional Intake</button>
+							</div>
+						</div>
+						<span th:utext="${successMessage}"></span>
+					</form>
+				</div>
+			</div>
+		</div>
+	
+	</body>
+</html>

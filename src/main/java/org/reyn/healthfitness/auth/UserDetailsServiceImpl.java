@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.reyn.healthfitness.models.CustomUserDetails;
 import org.reyn.healthfitness.models.Role;
 import org.reyn.healthfitness.models.User;
 import org.reyn.healthfitness.models.dao.UserDAO;
@@ -28,7 +29,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 		User user = userDAO.findByEmail(userName);
 		List<GrantedAuthority> authorities = getUserAuthority(user.getRoles());
-		return buildUserForAuthentication(user, authorities);
+		CustomUserDetails customUserDetail=new CustomUserDetails();
+        customUserDetail.setUser(user);
+        customUserDetail.setAuthorities(authorities);
+		return buildUserForAuthentication(customUserDetail.getUser(), authorities);
 	}
 
 	private List<GrantedAuthority> getUserAuthority(Set<Role> userRoles) {
